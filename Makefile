@@ -1,19 +1,20 @@
-NAME = libft.a
-CFLAGS = -Wall -Werror -Wextra -I. -c
-FILES = ft_lstnew.c
-OBJECTS = $(FILES:%.c=%.o)
+NAME=libft.a
+FLAGS=-Wall -Werror -Wextra -c
+CC=gcc
+
+
+$(NAME):
+	@$(CC) $(FLAGS) *.c
+	ar rc $(NAME) *.o
+	find . -name "*.o" -delete
+	ranlib $(NAME)
 
 all: $(NAME)
 
-$(NAME): $(FILES) list.h
-	@gcc $(CFLAGS) $(FILES)
-	@ar rc $(NAME) $(OBJECTS) # archive all objects in a single file
-	@ranlib $(NAME) # generate index to archive
-
 clean:
-	rm -f $(OBJECTS)
+	rm -f *.o *.a
 
-fclean: clean
+fclean:
 	rm -f $(NAME)
 
 re: fclean all
