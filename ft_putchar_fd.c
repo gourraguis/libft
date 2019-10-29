@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/29 12:20:01 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/29 14:19:44 by agourrag         ###   ########.fr       */
+/*   Created: 2019/10/29 12:17:49 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/29 14:20:07 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*str != '\0')
-	{
-		ft_putchar_fd(*str, fd);
-		str++;
-	}
+	write(fd, &c, 1);
 }

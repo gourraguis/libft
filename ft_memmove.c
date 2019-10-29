@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/29 12:20:01 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/29 14:19:44 by agourrag         ###   ########.fr       */
+/*   Created: 2019/10/29 11:37:51 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/29 11:54:49 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	while (*str != '\0')
+	unsigned char		*p1;
+	const unsigned char	*p2;
+	size_t				i;
+
+	p1 = dst;
+	p2 = src;
+
+	if (p1 > p2)
+		while (len--)
+			*(p1++) = *(p2)++;
+	else
 	{
-		ft_putchar_fd(*str, fd);
-		str++;
+		i = 0;
+		while (++i < len)
+			*(p1 + len - i) = *(p2 + len - i);
 	}
+	return (dst);
 }

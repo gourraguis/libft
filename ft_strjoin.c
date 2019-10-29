@@ -6,11 +6,11 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:35:34 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/17 17:43:48 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/10/29 12:43:05 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -19,26 +19,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*res;
 
-	len1 = 0;
-	len2 = 0;
-	while (*(s1 + len1) != '\0')
-		len1++;
-	while (*(s2 + len2) != '\0')
-		len2++;
-	if (!(res = malloc((len1 + len2) * sizeof(char))))
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (!(res = malloc((len1 + len2 + 1) * sizeof(char))))
 		return (0);
 	i = 0;
 	while (*s1 != '\0')
 	{
-		*(res + i) = *s1;
+		*(res + i++) = *s1;
 		s1++;
-		i++;
 	}
 	while (*s2 != '\0')
 	{
-		*(res + i) = *s2;
+		*(res + i++) = *s2;
 		s2++;
-		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }
