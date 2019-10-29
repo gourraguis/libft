@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 17:54:42 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/29 17:54:51 by agourrag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "list.h"
 
-void ft_lstadd_front(t_list **alst, t_list *new)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-  new->next = *alst;
-  *alst = new;
+	new->next = *alst;
+	*alst = new;
 }

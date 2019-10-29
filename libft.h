@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 18:27:40 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/29 18:27:47 by agourrag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -27,9 +39,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 char	*strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char *ft_strjoin(char const *s1, char const *s2);
-char *ft_strtrim(char const *s1, char const *set);
-char **ft_split(char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);

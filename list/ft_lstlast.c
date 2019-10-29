@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 17:56:59 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/29 17:57:00 by agourrag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "list.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-  while (lst->next)
-    lst = lst->next;
+	while (lst->next)
+		lst = lst->next;
 
-  return (lst);
+	return (lst);
 }
