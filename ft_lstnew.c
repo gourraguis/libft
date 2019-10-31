@@ -1,11 +1,23 @@
-#include "list.h"
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 17:53:12 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/31 13:37:49 by agourrag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_list *ft_lstnew(void *content)
+#include "libft.h"
+
+t_list	*ft_lstnew(void *content)
 {
-  t_list *res = malloc(sizeof(t_list));
+	t_list *res;
 
-  res->content = content;
-  res->next = 0;
-  return (res);
+	res = malloc(sizeof(t_list));
+	res->content = content;
+	res->next = 0;
+	return (res);
 }

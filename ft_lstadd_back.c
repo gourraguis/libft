@@ -1,7 +1,18 @@
-#include "list.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/29 17:57:19 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/31 13:37:29 by agourrag         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_lstadd_back(t_list **alst, t_list *new)
+#include "libft.h"
+
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-  /* TODO: replace helpers and shit with allowed functions */
-  ft_lstlast(*alst)->next = new;
+	ft_lstlast(*alst)->next = new;
 }
