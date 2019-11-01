@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 11:32:58 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/31 22:13:43 by agourrag         ###   ########.fr       */
+/*   Created: 2019/10/31 16:55:17 by agourrag          #+#    #+#             */
+/*   Updated: 2019/10/31 17:14:47 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	size_t				i;
-	unsigned char		*d;
-	unsigned char		*s;
+	t_list	*res;
+	t_list	*tmp;
 
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	i = -1;
-	while (++i < n)
+	if (!lst)
+		return (res);
+	res = ft_lstnew(lst->content);
+	lst = lst->next;
+	tmp = res->next;
+	while (lst)
 	{
-		d[i] = s[i];
-		if (s[i] == (unsigned char)c)
-			return (d + i + 1);
+		tmp = ft_lstnew(lst->content);
+		lst = lst->next;
+		tmp = tmp->next;
 	}
-	return (0);
 }

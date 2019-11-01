@@ -6,7 +6,7 @@
 #    By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 18:27:32 by agourrag          #+#    #+#              #
-#    Updated: 2019/10/31 16:03:55 by agourrag         ###   ########.fr        #
+#    Updated: 2019/10/31 19:23:48 by agourrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@ NAME=libft.a
 FLAGS=-Wall -Werror -Wextra -c
 CC=gcc
 SRCS=ft_strlen.c \
+	 ft_atoi.c \
+	 ft_strnstr.c \
+	 ft_isspace.c \
 	 ft_memcpy.c \
 	 ft_memset.c \
 	 ft_bzero.c \
@@ -43,12 +46,15 @@ SRCS=ft_strlen.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
 	 ft_calloc.c
-BONUS_SRCS=ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
-	ft_lstdelone.c
+BONUS_SRCS=ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
+	ft_lstdelone_bonus.c \
+	ft_lstclear_bonus.c \
+	ft_lstiter_bonus.c \
+	ft_lstmap_bonus.c
 OBJS=$(SRCS:.c=.o)
 BONUS_OBJS=$(BONUS_SRCS:.c=.o)
 
