@@ -6,7 +6,7 @@
 #    By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 18:27:32 by agourrag          #+#    #+#              #
-#    Updated: 2019/11/27 06:54:56 by agourrag         ###   ########.fr        #
+#    Updated: 2019/11/27 14:00:16 by agourrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,8 @@ SRCS=ft_strlen.c \
 	 ft_putstr_fd.c \
 	 ft_putendl_fd.c \
 	 ft_putnbr_fd.c \
+	 ft_islower.c \
+	 ft_isupper.c \
 	 ft_calloc.c
 BONUS_SRCS=ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
@@ -51,7 +53,8 @@ BONUS_SRCS=ft_lstnew_bonus.c \
 	ft_lstdelone_bonus.c \
 	ft_lstclear_bonus.c \
 	ft_lstiter_bonus.c \
-	ft_lstmap_bonus.c
+	ft_lstmap_bonus.c \
+	ft_lstclear_bonus.c
 OBJS=$(SRCS:.c=.o)
 BONUS_OBJS=$(BONUS_SRCS:.c=.o)
 
@@ -61,12 +64,12 @@ CC=gcc
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJS) $(BONUS_OBJS)
+	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	ar rc $(NAME) $(BONUS_OBJS)
 	ranlib $(NAME)
 
 %.o: %.c

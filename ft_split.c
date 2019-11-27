@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:45:09 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:08:59 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:45:22 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ft_count_char_occurences(const char *s, char c)
 		else
 			s++;
 	}
-
 	return (res);
 }
 
@@ -57,21 +56,19 @@ char	**ft_split(char const *s, char c)
 	count = ft_count_char_occurences(s, c) + 1;
 	if (!(res = malloc((count + 1) * sizeof(char*))))
 		return (NULL);
-
-	i = 0;
-	while (i < count)
+	i = -1;
+	while (++i < count)
 	{
 		while (*s == c)
 			s++;
 		if (!(res[i] = malloc((ft_count_until_char(s, c)) * sizeof(char))))
-			return (0);
+			return (NULL);
 		j = 0;
 		while (*s != c && *s != '\0')
 			res[i][j++] = *(s++);
 		while (*s == c)
 			s++;
-		i++;
 	}
-	res[i] = 0;
+	res[i] = NULL;
 	return (res);
 }

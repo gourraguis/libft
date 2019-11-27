@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:49:27 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:43:52 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:43:59 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	x = 0;
 	while (check_char(s1[x], set))
 		x++;
-	y = len ;
+	y = len;
 	while (check_char(s1[y - 1], set) && y > x)
 		y--;
 	return (ft_substr(s1, x, y - x));

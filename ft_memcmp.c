@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:59:55 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:14:44 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 14:55:19 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	p2 = (unsigned char*)s2;
 	while (n-- > 0)
 	{
-		if (*p1 - *p2 == 0)
-			return (*p1 - *p2);
+		if (*p1 - *p2 != 0)
+			return (int)(*p1 - *p2);
 		p1++;
 		p2++;
 	}

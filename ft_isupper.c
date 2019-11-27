@@ -6,12 +6,13 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 05:21:24 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:21:50 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:41:02 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c) {
+int	ft_isupper(int c)
+{
 	return (c >= 'A' && c <= 'Z');
 }

@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:06:40 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:48:20 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:42:45 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if ((res = malloc((len + 1) * sizeof(char))) == NULL)
 		return (NULL);
-
 	i = start;
 	while (i--)
 		if (*(s + i) == '\0')

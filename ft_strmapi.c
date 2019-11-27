@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 17:43:17 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:31:17 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:43:59 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	if ((res = malloc((ft_strlen(s) + 1) * sizeof(char))) == NULL)
 		return (NULL);
-
 	i = -1;
 	while (s[++i] != '\0')
 		res[i] = f(i, s[i]);

@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:30:41 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:31:40 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 14:08:04 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 
 	if (del == NULL || lst == NULL)
 		return ;
-
 	curr = *lst;
 	while (curr)
 	{

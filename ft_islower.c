@@ -6,14 +6,13 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 05:18:59 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:19:00 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:41:59 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "libft.h"
 
-int	ft_islower(int c) {
+int	ft_islower(int c)
+{
 	return (c >= 'a' && c <= 'z');
 }

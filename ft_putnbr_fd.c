@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:30:06 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:57:31 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:47:26 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd('-', fd);
 		nn = n * -1;
-	} else
+	}
+	else
 		nn = n;
-
 	if (nn > 9)
 		ft_putnbr_fd(nn / 10, fd);
 	ft_putchar_fd(nn % 10 + '0', fd);

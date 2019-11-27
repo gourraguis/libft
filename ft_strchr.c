@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:09:07 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:12:02 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:47:26 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ char	*ft_strchr(const char *s, int c)
 	char	*res;
 
 	if (c == '\0')
-		res = s + ft_strlen(s);
+		res = (char *)(s + ft_strlen(s));
 	else
 		res = ft_memchr(s, c, ft_strlen(s));
-
 	return (res);
 }

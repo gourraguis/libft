@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 16:27:11 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/29 17:42:41 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 14:07:30 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		ft_number_length(int n)
 		res++;
 		n /= 10;
 	}
-
 	return (res + 1);
 }
 
@@ -43,7 +42,6 @@ char	*ft_reverse(char *str)
 		str[len - i - 1] = tmp;
 		i++;
 	}
-
 	return (str);
 }
 

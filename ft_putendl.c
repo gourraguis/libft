@@ -6,12 +6,13 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/27 05:55:12 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:55:39 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:48:52 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char *str) {
+void	ft_putendl(char *str)
+{
 	ft_putendl_fd(str, 1);
 }

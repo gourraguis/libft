@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:19:57 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:39:07 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 13:45:37 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		res = s;
 	}
-
 	return (char*)(res);
 }
