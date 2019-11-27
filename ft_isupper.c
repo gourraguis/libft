@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/29 17:54:42 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/31 13:37:49 by agourrag         ###   ########.fr       */
+/*   Created: 2019/11/27 05:21:24 by agourrag          #+#    #+#             */
+/*   Updated: 2019/11/27 05:21:50 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **alst, t_list *new)
-{
-	new->next = *alst;
-	*alst = new;
+int	ft_isupper(int c) {
+	return (c >= 'A' && c <= 'Z');
 }

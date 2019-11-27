@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:55:17 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/31 17:14:47 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 05:38:12 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*res;
 	t_list	*tmp;
 
-	if (!lst)
+	if (lst == NULL || f == NULL || del == NULL)
 		return (res);
-	res = ft_lstnew(lst->content);
-	lst = lst->next;
-	tmp = res->next;
+
+	res = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew(lst->content);
+		if ((tmp = ft_lstnew((*f)(lst->content))) == NULL) {
+			ft_lstclear(&tmp, del);
+			ft_lstclear(&res, del);
+			return (NULL);
+		}
+
+		ft_lstadd_back(&res, tmp);
 		lst = lst->next;
-		tmp = tmp->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 01:06:10 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/17 09:31:37 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 06:31:17 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int res;
+	size_t res;
 
 	res = 0;
 	while (*(s + res) != '\0')

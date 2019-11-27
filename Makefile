@@ -6,13 +6,10 @@
 #    By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 18:27:32 by agourrag          #+#    #+#              #
-#    Updated: 2019/10/31 19:23:48 by agourrag         ###   ########.fr        #
+#    Updated: 2019/11/27 06:54:56 by agourrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft.a
-FLAGS=-Wall -Werror -Wextra -c
-CC=gcc
 SRCS=ft_strlen.c \
 	 ft_atoi.c \
 	 ft_strnstr.c \
@@ -58,6 +55,10 @@ BONUS_SRCS=ft_lstnew_bonus.c \
 OBJS=$(SRCS:.c=.o)
 BONUS_OBJS=$(BONUS_SRCS:.c=.o)
 
+NAME=libft.a
+FLAGS=-Wall -Werror -Wextra
+CC=gcc
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -69,10 +70,10 @@ bonus: $(OBJS) $(BONUS_OBJS)
 	ranlib $(NAME)
 
 %.o: %.c
-	$(CC) $(FLAGS)  $< -o $@
+	$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 clean:
-	rm -f *.o *.a
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)

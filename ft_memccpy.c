@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:32:58 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/31 22:13:43 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 05:42:33 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		if (s[i] == (unsigned char)c)
 			return (d + i + 1);
 	}
-	return (0);
+	return (NULL);
 }

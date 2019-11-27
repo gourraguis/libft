@@ -6,26 +6,20 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:09:07 by agourrag          #+#    #+#             */
-/*   Updated: 2019/10/17 10:18:35 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/27 06:12:02 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	const char *res;
+	char	*res;
 
-	res = s;
-	while (*res != '\0')
-	{
-		if (*res == c)
-		{
-			return (char*)(res);
-		}
-		res++;
-	}
 	if (c == '\0')
-	{
-		return (char*)(res);
-	}
-	return (0);
+		res = s + ft_strlen(s);
+	else
+		res = ft_memchr(s, c, ft_strlen(s));
+
+	return (res);
 }
