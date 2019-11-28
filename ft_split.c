@@ -6,69 +6,75 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:45:09 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 13:45:22 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/28 11:17:18 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_char_occurences(const char *s, char c)
+int		ft_count_strings(const char *s, char c)
 {
 	int res;
+	int i;
 
+	if (s[0] == '\0')
+		return (0);
 	res = 0;
-	while (*s != '\0')
-	{
-		if (*s == c)
-		{
-			res++;
-			while (*s == c)
-				s++;
-		}
-		else
-			s++;
-	}
-	return (res);
-}
-
-int		ft_count_until_char(const char *s, char c)
-{
-	int res;
-
-	res = 0;
-	while (*s != '\0' && *s != c)
-	{
+	if (s[0] != c)
 		res++;
-		s++;
-	}
+	i = 0;
+	while (s[++i] != '\0')
+		if (s[i - 1] == c && s[i] != c)
+			res++;
 	return (res);
 }
 
-char	**ft_split(char const *s, char c)
+char	*ft_remove_char(char *s, char c)
+{
+	int i;
+
+	i = -1;
+	while (s[++i] != '\0')
+		if (s[i] == c)
+			s[i] = '\0';
+	return (s);
+}
+
+int		allocate_helper(char const *s, char ***res, char **tmp, int c)
+{
+	if (!s)
+		return (0);
+	if (!(*res = malloc((ft_count_strings(s, c) + 1) * sizeof(char*))))
+		return (0);
+	if (!(*tmp = ft_remove_char(ft_strdup(s), c)))
+		return (0);
+	return (1);
+}
+
+char	**ft_split(char const *s, int c)
 {
 	char	**res;
-	int		i;
-	int		j;
-	int		count;
+	char	*tmp;
+	int		pos;
+	size_t	i;
 
-	if (!s)
+	if (!allocate_helper(s, &res, &tmp, c))
 		return (NULL);
-	count = ft_count_char_occurences(s, c) + 1;
-	if (!(res = malloc((count + 1) * sizeof(char*))))
-		return (NULL);
-	i = -1;
-	while (++i < count)
+	pos = -1;
+	i = 0;
+	while (i < ft_strlen(s))
 	{
-		while (*s == c)
-			s++;
-		if (!(res[i] = malloc((ft_count_until_char(s, c)) * sizeof(char))))
-			return (NULL);
-		j = 0;
-		while (*s != c && *s != '\0')
-			res[i][j++] = *(s++);
-		while (*s == c)
-			s++;
+		while (tmp[i] == '\0' && i < ft_strlen(s))
+			i++;
+		if (i < ft_strlen(s))
+		{
+			if (!(res[++pos] = ft_strdup(tmp + i)))
+				return (NULL);
+			while (tmp[i] != '\0')
+				i++;
+		}
 	}
-	res[i] = NULL;
+	res[ft_count_strings(s, c)] = NULL;
+	free(tmp);
 	return (res);
 }

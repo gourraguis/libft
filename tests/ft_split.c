@@ -1,9 +1,94 @@
-#include <stdio.h>
+Skip to content
+Why GitHub?
+Enterprise
+Explore
+Marketplace
+Pricing
+Search
 
-char	**ft_split(char const *s, char c);
+Sign in
+Sign up
+100ilaystone/libft
+ Code Issues 0 Pull requests 0 Projects 0 Security Insights
+Join GitHub today
+GitHub is home to over 40 million developers working together to host and review code, manage projects, and build software together.
 
-int main() {
-	char **res = ft_split("aazbbzcc", 'z');
+libft/ft_split.c
+ Ilyass Khadem substr and lstmap
+d85ca87 on Oct 29
+74 lines (67 sloc)  1.83 KB
 
-	printf("%s\n%s\n%s\n%s", res[0], res[1], res[2], res[3]);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/18 08:41:16 by ikhadem           #+#    #+#             */
+/*   Updated: 2019/10/28 18:28:57 by ikhadem          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+static char		*ft_replacechr(const char *str, int o, int s)
+{
+	size_t	i;
+	char	*res;
+
+	res = ft_strdup(str);
+	i = 0;
+	while (res[i] != '\0')
+	{
+		if (res[i] == o)
+			res[i] = s;
+		i++;
+	}
+	return (res);
+}
+
+static int		ft_countwords(const char *str, int c)
+{
+	int		count;
+	int		i;
+
+	count = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] != c && str[i - 1] == c) || (str[i] != c && i == 0))
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+char			**ft_split(const char *str, int c)
+{
+	char	*temp;
+	char	**res;
+	size_t	pos;
+	size_t	len;
+
+	if (!str)
+		return (NULL);
+	if (!(res = (char **)malloc(sizeof(char *) * (ft_countwords(str, c) + 1))))
+		return (NULL);
+	pos = 0;
+	len = 0;
+	temp = ft_strdup(str);
+	temp = ft_replacechr(temp, c, '\0');
+	while (len < ft_strlen(str))
+	{
+		while (temp[len] == '\0')
+			len++;
+		res[pos] = ft_strdup(temp + len);
+		pos++;
+		while (temp[len] != '\0')
+			len++;
+	}
+	res[ft_countwords(str, c)] = NULL;
+	free(temp);
+	return (res);
 }

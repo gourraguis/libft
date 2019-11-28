@@ -1,51 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strreverse.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/29 16:27:11 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/28 11:49:41 by agourrag         ###   ########.fr       */
+/*   Created: 2019/11/28 11:19:36 by agourrag          #+#    #+#             */
+/*   Updated: 2019/11/28 11:49:02 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_number_length(int n)
+void	ft_strreverse(char *str)
 {
-	int res;
-
-	res = 0;
-	if (n < 0)
-		res++;
-	while (n)
-	{
-		res++;
-		n /= 10;
-	}
-	return (res + 1);
-}
-
-char	*ft_reverse(char *str)
-{
+	int		start;
+	int		end;
 	char	tmp;
-	int		len;
-	int		i;
 
-	len = ft_strlen(str);
-	i = 0;
-	while (i < len / 2)
+	start = 0;
+	end = ft_strlen(str) - 1;
+	while (start < end)
 	{
-		tmp = str[i];
-		str[i] = str[len - i - 1];
-		str[len - i - 1] = tmp;
-		i++;
+		tmp = str[start];
+		str[start] = str[end];
+		str[end] = tmp;
+		start++;
+		end--;
 	}
-	return (str);
-}
-
-char	*ft_itoa(int n)
-{
-	return (ft_itoa_base(n, 10));
 }

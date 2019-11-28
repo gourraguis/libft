@@ -6,7 +6,7 @@
 #    By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/29 18:27:32 by agourrag          #+#    #+#              #
-#    Updated: 2019/11/27 14:00:16 by agourrag         ###   ########.fr        #
+#    Updated: 2019/11/28 11:48:18 by agourrag         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,10 @@ SRCS=ft_strlen.c \
 	 ft_putnbr_fd.c \
 	 ft_islower.c \
 	 ft_isupper.c \
-	 ft_calloc.c
+	 ft_calloc.c \
+	 ft_strdup.c \
+	 ft_strreverse.c \
+	 ft_itoi_base.c
 BONUS_SRCS=ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstsize_bonus.c \
