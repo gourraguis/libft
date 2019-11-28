@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 int main()
 {
-  char dst[200] ="ab";
-  char dst2[200] = "ab";
+  char *dest;
   int res;
 
-  res = ft_strlcat(dst, "lala", 3);
-  printf("%s %d \n", dst, res);
+  if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+		return (0);
+    memset(dest, 0, 15);
+	memset(dest, 'r', 6);
 
-  res = strlcat(dst2, "lala", 3);
-  printf("%s %d \n", dst, res);
+  dest[10] = 'a';
+  printf("%zu \n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 0));
 }
