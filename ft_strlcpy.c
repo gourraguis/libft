@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 08:30:04 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 13:46:25 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/29 23:51:11 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t i;
 
+	if (!dst || !src)
+		return (0);
 	i = ft_strlen(src);
 	if (size == 0)
 		return (i);

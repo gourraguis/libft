@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:26:31 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/28 12:05:34 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/28 12:17:21 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	*ft_itoa_base(int n, int base)
 	ft_nbr_to_str(num, base, res);
 	i = ft_nbrlen(num, base, is_negative);
 	if (is_negative)
-		res[i++] = '-';
+		res[i - 1] = '-';
 	res[i] = '\0';
 	ft_strreverse(res);
 	return (res);

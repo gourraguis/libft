@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:49:27 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 13:43:59 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/11/29 23:42:45 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		x;
 	int		y;
 
+	if (!s1)
+		return (NULL);
 	len = ft_strlen(s1);
 	x = 0;
 	while (check_char(s1[x], set))
