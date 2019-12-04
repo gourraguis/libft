@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:24:38 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 05:46:33 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/04 08:30:55 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
-	if (dst == src)
+	if (dst == src || !n)
 		return (dst);
 	d = dst;
 	s = src;

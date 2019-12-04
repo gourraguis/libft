@@ -6,7 +6,7 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 11:56:31 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/27 06:12:02 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/04 08:35:23 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	p = (unsigned char*)s;
 	while (n--)
 	{
-		if (*p == (unsigned char)c)
-			return ((void*)p);
-		p++;
+		if (*p++ == (unsigned char)c)
+			return ((void*)--p);
 	}
 	return (NULL);
 }
