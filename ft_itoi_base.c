@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tom <tom@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:26:31 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/28 12:17:21 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/11 13:10:01 by tom              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_nbrlen(unsigned int num, int base, int is_negative)
+static	int		ft_nbrlen(unsigned int num, int base, int is_negative)
 {
 	int res;
 
@@ -29,7 +29,7 @@ int		ft_nbrlen(unsigned int num, int base, int is_negative)
 	return (res);
 }
 
-void	ft_nbr_to_str(unsigned int num, int base, char *res)
+static	void	ft_nbr_to_str(unsigned int num, int base, char *res)
 {
 	int i;
 	int tmp;
@@ -51,7 +51,7 @@ void	ft_nbr_to_str(unsigned int num, int base, char *res)
 	}
 }
 
-char	*ft_itoa_base(int n, int base)
+char			*ft_itoa_base(int n, int base)
 {
 	int				i;
 	int				is_negative;

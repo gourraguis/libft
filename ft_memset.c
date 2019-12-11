@@ -6,21 +6,18 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 11:09:15 by agourrag          #+#    #+#             */
-/*   Updated: 2019/12/04 08:27:18 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/12 13:34:02 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*res;
+	char	*p;
 
-	res = (unsigned char *)b;
+	p = b;
 	while (len--)
-	{
-		*res = c;
-		res++;
-	}
+		*p++ = (unsigned char) c;
 	return (b);
 }

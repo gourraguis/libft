@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tom <tom@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:45:09 by agourrag          #+#    #+#             */
-/*   Updated: 2019/11/28 11:17:18 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/11 13:10:01 by tom              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count_strings(const char *s, char c)
+static	int		ft_count_strings(const char *s, char c)
 {
 	int res;
 	int i;
@@ -29,7 +29,7 @@ int		ft_count_strings(const char *s, char c)
 	return (res);
 }
 
-char	*ft_remove_char(char *s, char c)
+static	char	*ft_remove_char(char *s, char c)
 {
 	int i;
 
@@ -40,7 +40,7 @@ char	*ft_remove_char(char *s, char c)
 	return (s);
 }
 
-int		allocate_helper(char const *s, char ***res, char **tmp, int c)
+static	int		allocate_helper(char const *s, char ***res, char **tmp, int c)
 {
 	if (!s)
 		return (0);
@@ -51,7 +51,7 @@ int		allocate_helper(char const *s, char ***res, char **tmp, int c)
 	return (1);
 }
 
-char	**ft_split(char const *s, int c)
+char			**ft_split(char const *s, int c)
 {
 	char	**res;
 	char	*tmp;

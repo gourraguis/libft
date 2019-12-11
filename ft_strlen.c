@@ -6,20 +6,18 @@
 /*   By: agourrag <agourrag@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 01:06:10 by agourrag          #+#    #+#             */
-/*   Updated: 2019/12/08 13:01:16 by agourrag         ###   ########.fr       */
+/*   Updated: 2019/12/12 15:41:52 by agourrag         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t res;
+	const char	*res;
 
-	res = 0;
-	while (*(s + res) != '\0')
-	{
+	res = s;
+	while (*res)
 		res++;
-	}
-	return (res);
+	return (res - s);
 }
